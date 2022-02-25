@@ -105,7 +105,8 @@ export function getHostFromURL(url: string) {
 
 // TODO: キーを変更可能にする
 function articleProperties(article: Article): InputPropertyValueMap {
-  const hostname = article.Url ? getHostFromURL(article.Url) : '';
+  const hostname = 'Posted' + getHostFromURL(article.Url);
+
   return {
     title: {
       type: 'title',
