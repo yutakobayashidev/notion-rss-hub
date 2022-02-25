@@ -101,7 +101,7 @@ async function updateArticlePage(pageId: string, article: Article) {
 // TODO: キーを変更可能にする
 function articleProperties(article: Article): InputPropertyValueMap {
   return {
-    Name: {
+    title: {
       type: 'title',
       title: [
         {
