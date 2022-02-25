@@ -124,7 +124,7 @@ function articleProperties(article: Article): InputPropertyValueMap {
     Action: {
       type: 'text',
       text: {
-        content: hostname
+        content: "hostname"
     },
     Published: {
       type: 'checkbox',
