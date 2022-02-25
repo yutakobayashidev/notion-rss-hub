@@ -106,7 +106,7 @@ async function updateArticlePage(pageId: string, article: Article) {
 
 // TODO: キーを変更可能にする
 function articleProperties(article: Article): InputPropertyValueMap {
-  const hostname = "Post on" + article.Url
+  const hostname = "Posted" + article.Url
   ? getHostFromURL(article.Url)
   : null;
   return {
@@ -127,7 +127,9 @@ function articleProperties(article: Article): InputPropertyValueMap {
     },
     Action: {
       "type": "text",
-      "text": hostname,
+      "text": {
+        "content": hostname
+    },
     },
     from_rss: {
       type: 'checkbox',
