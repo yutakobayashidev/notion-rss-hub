@@ -112,13 +112,15 @@ function articleProperties(article: Article): InputPropertyValueMap {
         },
       ],
     },
-    Media: {
-      type: 'select',
-      select: {
-        name: article.FeedSource.Name,
-      },
-    },
     Published: {
+      type: 'checkbox',
+      "checkbox": true
+    },
+    from_rss: {
+      type: 'checkbox',
+      "checkbox": true
+    },
+    date: {
       type: 'date',
       date: {
         start: article.Published || '',
