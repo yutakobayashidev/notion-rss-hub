@@ -127,7 +127,7 @@ function articleProperties(article: Article): InputPropertyValueMap {
     },
     Action: {
       "type": "text",
-      "text": {
+      "rich_text": {
         "content": `Posted on ${hostname}`
       }
     },
