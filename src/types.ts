@@ -7,5 +7,8 @@ export type Article = {
   Title?: string;
   Url?: string;
   Published?: string;
+  Date?: string;
+  Action?: string;
+  from_rss?: string;
   FeedSource: FeedSource;
 };

@@ -103,12 +103,9 @@ export function getHostFromURL(url: string) {
   return urlObj.hostname;
 }
 
-
 // TODO: キーを変更可能にする
 function articleProperties(article: Article): InputPropertyValueMap {
-  const hostname = article.Url
-? getHostFromURL(article.Url)
-: null;
+  const hostname = article.Url ? getHostFromURL(article.Url) : '';
   return {
     title: {
       type: 'title',
@@ -123,17 +120,22 @@ function articleProperties(article: Article): InputPropertyValueMap {
     },
     Action: {
       type: 'rich_text',
-      rich_text: {
-        content: hostname
-      },
+      rich_text: [
+        {
+          type: 'text',
+          text: {
+            content: hostname,
+          },
+        },
+      ],
     },
     Published: {
       type: 'checkbox',
-      checkbox: true
+      checkbox: true,
     },
     from_rss: {
       type: 'checkbox',
-      checkbox: true
+      checkbox: true,
     },
     Date: {
       type: 'date',
