@@ -128,7 +128,7 @@ function articleProperties(article: Article): InputPropertyValueMap {
     Action: {
       "type": "text",
       "text": {
-        "content": hostname
+        "content": "fix"
     },
     },
     from_rss: {
