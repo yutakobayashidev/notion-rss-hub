@@ -125,6 +125,7 @@ function articleProperties(article: Article): InputPropertyValueMap {
       type: 'text',
       text: {
         content: hostname
+      },
     },
     Published: {
       type: 'checkbox',
