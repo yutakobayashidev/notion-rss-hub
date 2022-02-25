@@ -121,19 +121,18 @@ function articleProperties(article: Article): InputPropertyValueMap {
         },
       ],
     },
+    Action: {
+      type: "text",
+      text: {
+        content: hostname
+    },
     Published: {
       type: 'checkbox',
-      "checkbox": true
-    },
-    Action: {
-      "type": "text",
-      "text": {
-        "content": "fix"
-    },
+      checkbox: true
     },
     from_rss: {
       type: 'checkbox',
-      "checkbox": true
+      checkbox: true
     },
     date: {
       type: 'date',
