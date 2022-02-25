@@ -134,7 +134,7 @@ function articleProperties(article: Article): InputPropertyValueMap {
       type: 'checkbox',
       checkbox: true
     },
-    date: {
+    Date: {
       type: 'date',
       date: {
         start: article.Published || '',
