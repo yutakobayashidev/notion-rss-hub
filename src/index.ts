@@ -7,6 +7,11 @@ import { Notionclient } from './NotionClient';
 
 config();
 
+export function getHostFromURL(url: string) {
+  const urlObj = new URL(url);
+  return urlObj.hostname;
+}
+
 const notionClient = new Notionclient();
 
 async function getFeedSources(): Promise<FeedSource[]> {
@@ -98,8 +103,12 @@ async function updateArticlePage(pageId: string, article: Article) {
   });
 }
 
+
 // TODO: キーを変更可能にする
 function articleProperties(article: Article): InputPropertyValueMap {
+  const hostname = article.Url
+  ? getHostFromURL(article.Url)
+  : null;
   return {
     title: {
       type: 'title',
@@ -115,6 +124,12 @@ function articleProperties(article: Article): InputPropertyValueMap {
     Published: {
       type: 'checkbox',
       "checkbox": true
+    },
+    Action: {
+      "type": "text",
+      "text": {
+        "content": `Posted on ${hostname}`
+      }
     },
     from_rss: {
       type: 'checkbox',
