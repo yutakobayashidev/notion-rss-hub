@@ -123,7 +123,7 @@ function articleProperties(article: Article): InputPropertyValueMap {
     },
     Action: {
       type: 'rich_text',
-      text: {
+      rich_text: {
         content: hostname
       },
     },
