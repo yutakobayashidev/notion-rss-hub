@@ -28,6 +28,6 @@ jobs:
         uses: sarisia/actions-status-discord@v1
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          description: 'Checking the quality of dotfiles'
+          description: 'Sync RSS with Notion Databases'
           username: GitHub Actions
           avatar_url: ${{ secrets.AVATAR_URL }}
