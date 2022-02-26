@@ -22,3 +22,12 @@ jobs:
           NOTION_KEY: ${{ secrets.NOTION_KEY }}
           FEED_SOURSES_NOTION_DATABASE_ID: ${{ secrets.FEED_SOURSES_NOTION_DATABASE_ID }}
           ARTICLES_NOTION_DATABASE_ID: ${{ secrets.ARTICLES_NOTION_DATABASE_ID }}
+
+      - name: post status to Discord
+        if: always()
+        uses: sarisia/actions-status-discord@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          description: 'Checking the quality of dotfiles'
+          username: GitHub Actions
+          avatar_url: ${{ secrets.AVATAR_URL }}
